@@ -1,0 +1,151 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#mainWrap {
+    width: 100%;
+    height: 100%;
+}
+
+#btRecord{
+    width: 75px;
+    height: 75px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#recState{
+    font-size: 40px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.idle {
+    color: #6699bb;
+}
+
+#btWrapper{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+#btRecord{
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#ctlViz{
+    grid-row: 1;
+    grid-column: 1;
+    display: block;
+}
+
+#title {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+#header p{
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+#controls {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#stats {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.bubble.populated {
+    max-width: 60%;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    align-self: flex-start;
+    background-color: #d1e7ff;
+}
+
+.summary{
+    width: 100%;
+    margin: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background-color: #f1f1f1;
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    word-wrap: break-word;
+    align-self: flex-start;
+    background-color: #ffefd1;
+}
+
+#main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    overflow-y: auto;
+    height: calc(100vh - 150px); /* Adjust height to fit content */
+    max-width: 800px;
+    margin: 0 auto; /* Center horizontally */
+    padding-bottom: 150px;
+}
+
+.btAction {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btAction:disabled{
+    background-color: dimgrey;
+    cursor: default;
+}
+
+.btAction:not(:disabled):hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btAction:not(:disabled):active {
+    background-color: #003f7f;
+    transform: scale(0.95);
+}
