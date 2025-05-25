@@ -1,3 +1,4 @@
+
 export namespace util {
     export function ToggleClassIf(element: HTMLElement, className: string, condition: boolean) {
         if (!condition && element.classList.contains(className)) {
@@ -70,7 +71,7 @@ export class AsyncCriticalSection {
     private queue: (() => void)[] = [];
     public isLocked: boolean = false;
 
-    public async waitForCriticalSection(): Promise<void> {
+    async waitForCriticalSection(): Promise<void> {
         if (!this.isLocked) {
             this.isLocked = true;
             return;

@@ -5,7 +5,7 @@ export namespace DB {
 
     export async function Init(): Promise<void> {
         let future = new Deferred();
-        let request = indexedDB.open("mimi-chats", 1);
+        let request = indexedDB.open("fb-chats", 1);
 
         request.onupgradeneeded = (ev) => {
             let db = request.result;
@@ -33,10 +33,11 @@ export namespace DB {
             template: template,
             summary: "",
         };
+        chat.messages.push(CreateMessage("user", "", true));
         return chat;
     }
 
-    export function CreateMessage(type: string, text?: string, isPending?: boolean): Message {
+    export function CreateMessage(type: MessageRole, text?: string, isPending?: boolean): Message {
         let now =  new Date().toISOString();
         let msg = {
             text: text ?? "",
@@ -71,6 +72,8 @@ export namespace DB {
     }
 }
 
+export type MessageRole = "system" | "user" | "assistant" | "tool";
+
 export interface Chat {
     messages: Message[];
     id: string;
@@ -85,5 +88,5 @@ export interface Message {
     creationIso: string;
     editIso: string;
     isPending: boolean;
-    type: string;
+    type: MessageRole;
 }
