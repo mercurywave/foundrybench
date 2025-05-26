@@ -25,7 +25,7 @@ function initUi(){
 function initApiConfigFields() {
     const apiUrl = document.getElementById("apiUrl") as HTMLInputElement;
     const apiKey = document.getElementById("apiKey") as HTMLInputElement;
-    const modelSelect = document.getElementById("modelSelect") as HTMLSelectElement;
+    const modelSelect = document.getElementById("modelSelect") as HTMLInputElement;
     
     apiUrl.addEventListener("input", () => {
         localStorage.setItem("apiUrl", apiUrl.value);
